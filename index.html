@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <!-- meta：給瀏覽器和搜尋引擎看的資訊，不會顯示在畫面上 -->
+  <meta charset="UTF-8">
+  <!-- 讓手機正確縮放，沒有這行手機會看到縮小版的電腦網頁 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="jason的基地：Jason 的個人網站">
+  <title>jason的基地</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 導覽列：href="#about" 會跳到 id="about" 的區塊 -->
+  <header class="navbar">
+    <a href="#" class="logo">jason的基地</a>
+    <nav>
+      <a href="#about">關於我</a>
+      <a href="#projects">作品</a>
+      <a href="#contact">聯絡</a>
+      <button id="theme-toggle" aria-label="切換深色模式">🌙</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 首頁大標題區 -->
+    <section class="hero">
+      <h1>嗨，我是 <span class="highlight">Jason</span> 👋</h1>
+      <p>資訊工程系學生 · 喜歡寫程式與學新東西</p>
+      <a href="#projects" class="btn">看看我的作品</a>
+    </section>
+
+    <section id="about">
+      <h2>關於我</h2>
+      <p>在這裡寫一段自我介紹：你的學校、興趣、正在學什麼技術。</p>
+      <ul class="skills">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>Git</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>作品</h2>
+      <!-- 卡片由 script.js 依照資料自動產生，新增作品只要改 JS 裡的陣列 -->
+      <div id="project-list" class="cards"></div>
+    </section>
+
+    <section id="contact">
+      <h2>聯絡我</h2>
+      <p>Email：<a href="mailto:you@example.com">you@example.com</a></p>
+      <p>GitHub：<a href="https://github.com/Jason-0723" target="_blank" rel="noopener">github.com/Jason-0723</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Jason · 用 HTML/CSS/JS 手工打造</p>
+  </footer>
+
+  <!-- script 放在 body 最後，確保上面的 HTML 都載入了，JS 才找得到元素 -->
+  <script src="script.js"></script>
+</body>
+</html>

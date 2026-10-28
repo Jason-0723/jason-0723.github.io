@@ -1,0 +1,180 @@
+/* ===== CSS 變數：顏色集中管理，切換深色模式只要換這組值 ===== */
+:root {
+  --bg: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --card: #f3f4f6;
+  --accent: #2563eb;
+}
+
+/* 當 <html> 上有 data-theme="dark" 時，覆蓋變數 */
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --card: #1e293b;
+  --accent: #60a5fa;
+}
+
+/* ===== 基本設定 ===== */
+* {
+  box-sizing: border-box; /* 寬度包含 padding 和 border，排版比較直覺 */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* 點導覽列時平滑捲動 */
+}
+
+body {
+  font-family: system-ui, -apple-system, "Noto Sans TC", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  transition: background 0.3s, color 0.3s;
+}
+
+a {
+  color: var(--accent);
+}
+
+/* ===== 導覽列（Flexbox 排版） ===== */
+.navbar {
+  position: sticky; /* 捲動時固定在上方 */
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--card);
+  z-index: 10;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.navbar nav a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.navbar nav a:hover {
+  color: var(--accent);
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* ===== 內容區塊 ===== */
+main {
+  max-width: 900px;
+  margin: 0 auto; /* 置中 */
+  padding: 0 1.5rem;
+}
+
+section {
+  padding: 4rem 0;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 6rem 0;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem); /* 依螢幕寬度自動調整字體大小 */
+}
+
+.hero p {
+  color: var(--muted);
+  margin: 1rem 0 2rem;
+}
+
+.highlight {
+  color: var(--accent);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.skills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.skills li {
+  background: var(--card);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+
+/* ===== 作品卡片（Grid 排版，自動依寬度決定一排幾張） ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  border-top: 1px solid var(--card);
+}
+
+/* ===== RWD：螢幕寬度小於 600px（手機）時的調整 ===== */
+@media (max-width: 600px) {
+  .navbar nav {
+    gap: 0.6rem;
+    font-size: 0.9rem;
+  }
+}
