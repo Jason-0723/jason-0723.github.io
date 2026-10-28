@@ -8,9 +8,9 @@ const projects = [
     link: "https://github.com/Jason-0723/jason-0723.github.io",
   },
   {
-    title: "作品二",
-    description: "之後做的留言板、Todo App 等等都可以放在這裡。",
-    link: "#",
+    title: "🔒 私人空間",
+    description: "需要登入才能進入的私人筆記與網址，內容用 AES 加密保護。",
+    link: "private/",
   },
 ];
 
