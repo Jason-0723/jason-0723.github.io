@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>私人空間管理 · jason的基地</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="private.css">
+</head>
+<body>
+  <header class="navbar">
+    <a href="../" class="logo">jason的基地</a>
+    <nav>
+      <a href="./">私人空間</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 這一頁本身不含任何秘密，公開也沒關係：所有加密都在你的瀏覽器裡完成，不會送到任何伺服器 -->
+    <section class="panel wide">
+      <h1>🛠️ 私人空間管理</h1>
+      <p class="hint">在這裡編輯內容和帳號，產生新的 <code>vault.json</code>，再上傳到 GitHub 的 <code>private/</code> 資料夾，取代舊的檔案。所有加密都在你的瀏覽器裡完成。</p>
+
+      <h2>① 載入目前的內容（選填）</h2>
+      <p class="hint">用任一個有效帳號登入，把現有的筆記和網址載入下面的編輯區。</p>
+      <form id="load-form">
+        <label for="load-user">帳號</label>
+        <input id="load-user" autocomplete="username" required>
+        <label for="load-pass">密碼</label>
+        <input id="load-pass" type="password" autocomplete="current-password" required>
+        <button type="submit" class="btn">載入</button>
+      </form>
+      <p id="load-message" class="message" role="alert"></p>
+
+      <h2>② 筆記</h2>
+      <p class="hint">每則筆記用 <code>## 標題</code> 開頭，下面接內容。</p>
+      <textarea id="notes" rows="10">## 第一則筆記
+這裡是只有登入才看得到的內容。</textarea>
+
+      <h2>③ 網址</h2>
+      <p class="hint">一行一個，格式：<code>名稱 | 網址</code></p>
+      <textarea id="links" rows="5">我的 GitHub | https://github.com/Jason-0723</textarea>
+
+      <h2>④ 允許登入的帳號</h2>
+      <p class="hint">一行一個，格式：<code>帳號:密碼</code>。密碼至少 8 個字。<strong>沒有列在這裡的帳號，產生新檔後就不能登入了</strong>（帳號不會存在檔案裡，所以每次都要重新填完整名單）。</p>
+      <textarea id="users" rows="4" placeholder="jason:一個夠長的密碼"></textarea>
+
+      <button id="generate" class="btn">🔐 產生並下載 vault.json</button>
+      <p id="generate-message" class="message" role="alert"></p>
+    </section>
+  </main>
+
+  <script src="vault-crypto.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

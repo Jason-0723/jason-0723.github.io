@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kdf": {
+    "name": "PBKDF2",
+    "hash": "SHA-256",
+    "iterations": 600000,
+    "salt": "iussF2gRrY8q3ZGuBwzGHA=="
+  },
+  "users": [
+    {
+      "iv": "lRkXIPx7a0P/brTO",
+      "data": "wnKnHFwlvM8lubdy7lLgpGhwH9feqrV0jA45eDA5QubEz3afLyrmeGSF2ySb4AjJ"
+    }
+  ],
+  "content": {
+    "iv": "ApjAWbJGJ/aw8mKC",
+    "data": "qi0RThkIlMbiWJUD1CtaL/pT1zYafKLPnfT4i0JD1hg+2PY3mYY0vI8PLIg40FntC8rM0YVjtnyoZqSHAiv2HDpB+7q1fCWap9fChKkXnjsMIAYhuzuQlUUlh+J7IUrEOCGaJgb6Nwsv5Edr50mIs5Cm6oRSnpSpBmplYod7GTLbIAaUQ1YqBFAWu0sfx0/QQKZWhbeRJfr2b/nvLoLnkIruFNLEB+NoeHQleTZM0Ad0sL4S+ud95JBXlvLiYP0FM0O2pLiqDIuIjeQ/a5bSUMJ+Ux4dLIwbHbJk55LUJbOkH/dgHAMA5GF0Ki7iNXF9RVJG9TLlmVydW4eb/EXHDDs9j5TpVw9dRcQEDMloi54LYYKfPamkSk+DdTXJ0MYDCY59xCtPyJDeX30BcAZvCm3kLfHj18OGGohtdrme7kJ8w4JpT8ho63Ka9x0PZd9CSkXNpAubfqK8MVSr1r0ODrjqpwgQbxUS8sUxlQ=="
+  }
+}

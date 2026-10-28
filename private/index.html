@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 請搜尋引擎不要收錄這一頁 -->
+  <meta name="robots" content="noindex">
+  <title>私人空間 · jason的基地</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="private.css">
+</head>
+<body>
+  <header class="navbar">
+    <a href="../" class="logo">jason的基地</a>
+    <nav>
+      <a href="../#projects">← 回作品</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 登入表單 -->
+    <section id="login-view" class="panel">
+      <h1>🔒 私人空間</h1>
+      <p class="hint">需要經過同意的帳號密碼才能進入。</p>
+      <form id="login-form">
+        <label for="username">帳號</label>
+        <input id="username" autocomplete="username" required>
+        <label for="password">密碼</label>
+        <input id="password" type="password" autocomplete="current-password" required>
+        <button type="submit" class="btn">登入</button>
+      </form>
+      <p id="login-message" class="message" role="alert"></p>
+    </section>
+
+    <!-- 解密後的內容，登入前是隱藏的 -->
+    <section id="content-view" class="panel wide hidden">
+      <div class="toolbar">
+        <h1 id="welcome"></h1>
+        <button id="logout" class="btn">登出</button>
+      </div>
+      <h2>📝 筆記</h2>
+      <div id="notes"></div>
+      <h2>🔗 網址</h2>
+      <ul id="links" class="links"></ul>
+    </section>
+  </main>
+
+  <script src="vault-crypto.js"></script>
+  <script src="private.js"></script>
+</body>
+</html>
